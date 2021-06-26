@@ -1,0 +1,44 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_color"
+    tools:context=".RezourceInfo">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/rezourceView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#74F1E5"
+            android:gravity="center"
+            android:text="ANROID RESOURCES"
+            android:textColor="#05769C"
+            android:textSize="28sp" />
+
+
+        <TextView
+            android:id="@+id/listdesc3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:fontFamily="monospace"
+            android:text="Description"
+            android:textColor="#000"
+            android:textSize="20dp"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:id="@+id/rezourceImage"/>
+
+    </LinearLayout>
+
+</ScrollView>

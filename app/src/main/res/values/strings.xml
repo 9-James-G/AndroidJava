@@ -1,0 +1,148 @@
+<resources>
+    <string name="app_name">Android Java</string>
+    <string name="androidacttext">
+<b><u>ANDROID ACTIVITY</u></b> \n\n
+An activity in Android is simply a screen that is shown to the user. Life cycle, on the other hand, is the state that the application is going through.\nIn every state that our application goes through, we can add implementation that we need in order for our application to avoid crashing or lose the progress made by our users.
+\nWhen an application is opened in our device, three callback methods are implemented. These are onCreate(), onStart(), and onResume().\n\n
+onCreate()- activity is created and initializations are done\n
+onStart()- activity is now visible to the users.\n\n
+onResume()- users can interact with the screen and stays until another activity is launched.\n\n
+While the user is interacting within activity and not moving to another activity, it stays on the onResume() state. But when the application is minimized, it is still in the memory and two callback methods are invoked- onPause() and onStop().\n\n
+onPause()- first indication that the user leaving the activity.\n\n
+onStop()- activity in the application is no longer visible to the user.\n\n
+When the activity is removed from the memory, either intentional or because the system needs additional memory space, the onDestroy() is called.\n\n
+onDestroy() - the application is closed thus being destroyed and will start again from onCreate() when the application is opened again All the android applications that we use undergo this life cycle and is important to make it as robust as possible to the different situations it can face.
+        \n\n
+<b>Android Activity Life Cycle:</b>
+    </string>
+    <string name="toasttext">
+<b><u>TOAST</u></b>\n\n
+Toast is used to show a notification for a particular duration. It does not block user from any other interaction because it disappears on the screen depending on the selected duration. There are two durations that can be used in toast. These are the following:\n\n
+LENGTH_SHORT- displays the view for a short time \n\n
+LENGTH_LONG- displays the view for a slightly longer duration than the previous \n\n
+Below is the syntax when using the toast.\n\n
+Toast.makeTextcontext, text to be displayed, duration).show();\n
+Ex.\n
+Toast.makeText(getApplicationContext,“Toast message”, Toast.LENGTH_LONG).show();\n\n
+<b>Image of the Sample Output:</b>
+    </string>
+    <string name="snacktext">
+<b><u>SNACKBAR</u></b>\n\n
+For the Snackbar, we will be using the Material Design of Google. To implement this, type “material.io” in your browser. In the Components Tab, open source code for Android. Under the Popular section, click “Get Started with MDC for Android”.
+\n\nCopy the library and paste it on the dependencies section of your Android project. Make sure to change the version with the most current one from the Google Maven Repository or MVN Repository.
+\n\nOn your Android Studio, change the theme that you will be using with any them from the material design in the themes.xml under the res folder. Next is to create a button that will trigger the displaying of the snackbar and initialize it in your java file.\nOn the onClick method of the button add the following code.\n\n
+Snackbar snackbar = Snackbar.make(view, “Message Here”, Snackbar.LENGTH_LONG);\n
+snackbar.show();\n\n
+This is the syntax for a simple snackbar. The difference with the toast is that we can add actions to snackbar. We can add the following code before using the .show() method.
+\n\n
+snackbar.setAction("GO",new View.OnClickListener() {\n
+@Override\n
+public void onClick(View view) {\n
+//Add code here for the function\n
+}\n
+});\n\n
+In addition, we can also override the duration and animation of the snackbar if we want to customize it. We can use the setDuration() and setAnimationMode() methods to do this.\n\n
+snackbar.setDuration(1000); //duration in millisecond \n\n
+snackbar.setAnimationMode(BaseTransientBottomBar.ANIMATION_MODE_SLIDE);\n
+//choose between slide and fade\n\n
+<b>Image of the Sample Output:</b>
+    </string>
+    <string name="alerttext">
+<b><u>ALERTDIALOG</u></b>\n\n
+Like the snackbar, we will be using the material design. After the implementation of the library, create a button for triggering the dialog. Use the code below for reference.\n\n
+MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(this);\n
+builder.setTitle("Confirmation");\n
+builder.setMessage("Do you want to proceed with the changes?"); \n
+builder.setIcon(R.drawable.ic_baseline_help_center_24); \n
+builder.setPositiveButton("YES", new DialogInterface.OnClickListener() { \n
+@Override \n
+public void onClick(DialogInterface dialogInterface, int i) { \n
+//add function here for OK \n
+}\n
+});\n\n
+builder.setNegativeButton("NO", new DialogInterface.OnClickListener() { \n
+@Override\n
+public void onClick(DialogInterface dialogInterface, int i) { \n
+//add function here for NO \n
+} \n
+}); \n
+builder.show();\n\n
+<b>Image of the Sample Output:</b>
+    </string>
+    <string name="dbdesc1">
+<b><u>SQLite</u></b>
+\n\n
+SQLite is a software library that provides a relational database management system. The lite in SQLite means lightweight in terms of setup, database administration, and required resources.
+\n\n
+<b>SQLite in Android:</b>
+\n\n
+1. SQLite is embedded in every Android device. Using an SQLite database in Android does not require a setup procedure or administration of the database.\n
+2. You have to take care of SQL queries for creating and updating the database. After that, the android platform automatically creates the database and table.\n
+3. Access to an SQLite database involves accessing the file system. This can be slow. Therefore it is recommended to perform database operations asynchronously.\n
+4. If your application creates a database, this database is by default saved in the directory DATA/data/APP_NAME/databases/FILENAME
+\n\n
+<b>SQLite architecture</b>
+\n\n
+SQLite Package - In Android, the android database contains all the necessary classes related to the database. The android.database.sqlite contains SQLite specific
+class.
+\n\n
+To create an SQLite database in android, You have to extend SQLiteOpenHelper class. You have to override two methods
+\n\n
+● onCreate(): This method is called when the database is created the first time. This method is used for creating tables.\n
+● upgrade(): It is called when the database needs to be upgraded. you should use this method to drop tables, add a table or do anything else it needs to upgrade to the new schema version.
+\n\n
+The SqliteOpenHelper class provides the getReadableDatabase() and getWritableDatabase() methods to get access to an SqliteDatabase object either in read or write mode.
+\n\n
+<b><u>Helping classes in SqliteDatabase</u></b>
+\n\n
+<b>Content Value</b>\n
+- The object ContentValues allows to define key/values. The key represents the table column name and the Value represents the content for the table record in this column.Content Values can be used for insert and updates of database entries.
+\n\n
+<b>Cursor</b>\n
+- When a query fires in sqlite database it returns a Cursor object. A cursor represents the result of a query and basically points to one row of the query result. This way Android retrieve the result of query. It does not have to load all data into memory.
+\n\n
+Cursor class has many methods: Here is some of that
+\n\n
+getCount() - It gives the number of rows resultant query.\n
+moveToFirst() -To move cursor first rows .\n
+moveToLast() - To move the cursor to last row.\n
+moveToNext() - To move the cursor in next row.
+\n\n
+<b><u>SQLite has the following noticeable features:</u></b>
+\n\n
+<b>Serverless</b>\n
+- Normally, an RDBMS such as MySQL, PostgreSQL, etc., requires a separate server process to operate. The applications that want to access the database server use TCP/IP protocol to send and receive requests. This is called client/server architecture.
+    </string>
+    <string name="dbdesc2">
+- SQLite does NOT work this way.\n
+- SQLite does NOT require a server to run.\n
+- SQLite database is integrated with the application that accesses the database. The applications interact with the\n
+- SQLite database read and write directly from the database files stored on disk.
+    </string>
+    <string name="dbdesc3">
+<b>Self-Contained</b>\n
+- SQLite is self-contained means it requires minimal support from the operating system or external library. This makes SQLite usable in any environment especially in embedded devices like iPhones, Android phones, game consoles, handheld media players, etc.
+\n\n
+- SQLite is developed using ANSI-C. The source code is available as a big sqlite3.c and its header file sqlite3.h. If you want to develop an application that uses SQLite, you just need to drop these files into your project and compile it with your code.
+\n\n
+<b>Zero-configuration</b>\n
+- Because of the serverless architecture, you don’t need to “install” SQLite before using it. No server process needs to be configured, started, and stopped. Also, SQLite does not use any configuration files.
+\n\n
+<b>Transactions</b>\n
+- All transactions in SQLite are fully ACID-compliant. It means all queries and changes are Atomic, Consistent, Isolated, and Durable. In other words, all changes within a transaction take place completely or not at all even when an unexpected situation like an application crash, power failure, or operating system crash occurs.
+\n\n
+<b><u>SQLite distinctive features</u></b>\n
+- SQLite uses dynamic types for tables. It means you can store any value in any column, regardless of the data type. SQLite allows a single database connection to access multiple database files simultaneously. This brings many nice features like joining tables in different databases or copying data between databases in a single command. SQLite is capable of creating in-memory databases that are very fast to work with.
+    </string>
+
+
+    <string name="title_activity_new_data">NewData</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+</resources>

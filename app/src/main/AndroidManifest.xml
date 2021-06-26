@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.group1.androidjava">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AndroidJava">
+        <activity android:name=".MatEX"></activity>
+        <activity android:name=".Extra" />
+        <activity android:name=".NewDataz" />
+        <activity
+            android:name=".NewData"
+            android:label="@string/title_activity_new_data"
+            android:theme="@style/Theme.AndroidJava.NoActionBar" />
+        <activity android:name=".LightInfo" />
+        <activity android:name=".LightWeight" />
+        <activity android:name=".CompoList" />
+        <activity android:name=".MatInfo" />
+        <activity android:name=".MatDezign" />
+        <activity android:name=".AlertDialz" />
+        <activity android:name=".Znackbar" />
+        <activity android:name=".Toaztz" />
+        <activity android:name=".AndroidActivity1" />
+        <activity android:name=".ValzInfo" />
+        <activity android:name=".Valz" />
+        <activity android:name=".RezourceInfo" />
+        <activity android:name=".AndRezource" />
+        <activity android:name=".AnotherOne" />
+        <activity android:name=".ActIntent" />
+        <activity android:name=".IntentInfo" />
+        <activity android:name=".Intent" />
+        <activity android:name=".AndroidActivityInfo" />
+        <activity android:name=".AndroidActivity" />
+        <activity android:name=".AddJavaInfo" />
+        <activity android:name=".AddJava" />
+        <activity android:name=".LayoutInfo" />
+        <activity android:name=".Layout" />
+        <activity android:name=".WidgetsInfo" />
+        <activity android:name=".WidgetList" />
+        <activity android:name=".Widgets" />
+        <activity android:name=".ListdataActivity" />
+        <activity android:name=".AndroidOS" />
+        <activity android:name=".List" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

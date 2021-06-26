@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_color"
+    tools:context=".Toaztz">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/toaztView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#74F1E5"
+            android:gravity="center"
+            android:text="TOAST"
+            android:textColor="#05769C"
+            android:textSize="28sp" />
+
+        <TextView
+            android:id="@+id/listdesc8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:text="@string/toasttext"
+            android:textColor="#000"
+            android:textSize="20dp"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="411dp"
+            android:layout_gravity="center"
+            android:src="@drawable/sampletoast" />
+
+    </LinearLayout>
+
+</ScrollView>
